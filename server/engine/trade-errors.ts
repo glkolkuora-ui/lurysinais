@@ -55,7 +55,7 @@ function readErrorMessage(err: unknown): string {
 
 /** Mínimo estimado quando o SDK não expõe limites do ativo. */
 export function minStakeForCurrency(currency?: string): number {
-  const c = String(currency ?? 'USD').toUpperCase()
+  const c = String(currency ?? 'BRL').toUpperCase()
   if (c === 'BRL') return 2
   return 1
 }

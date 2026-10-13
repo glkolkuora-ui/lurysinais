@@ -11,7 +11,7 @@ function timeStr(ms: number, locale: string): string {
   return new Date(ms).toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', second: '2-digit' })
 }
 
-export default function TradeLog({ trades, currency = 'USD' }: Props) {
+export default function TradeLog({ trades, currency = 'BRL' }: Props) {
   const { t, bcp47 } = useI18n()
   return (
     <div className="tradelog">

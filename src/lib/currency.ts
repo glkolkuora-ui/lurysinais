@@ -15,12 +15,12 @@ const LOCALES: Record<string, string> = {
 }
 
 export function currencySymbol(code?: string): string {
-  if (!code) return '$'
+  if (!code) return 'R$'
   return SYMBOLS[code.toUpperCase()] ?? code.toUpperCase() + ' '
 }
 
 export function formatCurrency(value: number, code?: string): string {
-  const loc = LOCALES[code?.toUpperCase() ?? ''] ?? 'en-US'
+  const loc = LOCALES[code?.toUpperCase() ?? ''] ?? 'pt-BR'
   const sign = value < 0 ? '-' : ''
   const abs = Math.abs(value)
   return `${sign}${currencySymbol(code)} ${abs.toLocaleString(loc, {

@@ -32,9 +32,10 @@ export default function Dashboard({ onDisconnect }: Props) {
     status?.currency
     ?? balances.find(b => b.id === displayBalanceId)?.currency
     ?? balances.find(b => b.id === status?.balanceId)?.currency
+    ?? balances.find(b => b.type === 'real' && String(b.currency).toUpperCase() === 'BRL')?.currency
     ?? balances.find(b => b.type === 'real')?.currency
     ?? balances[0]?.currency
-    ?? 'USD'
+    ?? 'BRL'
 
   const currencyRef = useRef(currency)
   currencyRef.current = currency

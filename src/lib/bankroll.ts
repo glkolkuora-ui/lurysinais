@@ -1,5 +1,5 @@
-export const BANKROLL_UNLOCK = 100
-export const BANKROLL_FLOOR = 20
+export const BANKROLL_UNLOCK = 500
+export const BANKROLL_FLOOR = 100
 
 export type BankrollReason = 'ok' | 'need_unlock' | 'need_reunlock'
 

@@ -88,7 +88,7 @@ export class BotEngine extends EventEmitter {
   private paused = false
   private openTradeIdSnapshot: string | null = null
   /** Moeda da conta selecionada — capturada no start p/ formatar a UI. */
-  private currency = 'USD'
+  private currency = 'BRL'
   /** Buffer de velas do gráfico (histórico + ao vivo), p/ repovoar quando o
    *  componente do gráfico remonta (troca de aba). Keyed por `from` (segundos). */
   private chartCandles = new Map<number, Candle>()
@@ -98,7 +98,7 @@ export class BotEngine extends EventEmitter {
     if (this.running) throw new Error(tApp('botAlreadyRunning'))
     this.config = config
     this.running = true
-    this.currency = this.sdk.getBalanceSnapshot(config.balanceId)?.currency ?? 'USD'
+    this.currency = this.sdk.getBalanceSnapshot(config.balanceId)?.currency ?? 'BRL'
     this.balanceStart = currentBalance
     this.balanceCurrent = currentBalance
     this.wins = this.losses = this.consecLosses = 0
@@ -396,7 +396,7 @@ export class BotEngine extends EventEmitter {
     this.entryInFlight = true
     const stake = this.computeStake()
     const balanceSnap = this.sdk.getBalanceSnapshot(this.config.balanceId)
-    const cur = balanceSnap?.currency ?? 'USD'
+    const cur = balanceSnap?.currency ?? 'BRL'
     this.log(tApp('entry', {
       strategy: ev.strategy ?? '',
       direction: ev.direction ?? '',

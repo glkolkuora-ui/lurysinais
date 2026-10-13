@@ -593,7 +593,7 @@ export class SdkBridge {
     if (!balance) return null
     return {
       amount: balance.amount,
-      currency: String(balance.currency ?? 'USD'),
+      currency: String(balance.currency ?? 'BRL'),
       type: balance.type === BalanceType.Real ? 'real' : 'demo',
     }
   }
@@ -758,7 +758,7 @@ export class SdkBridge {
     }
 
     const available = Number(balance.amount)
-    const currency = String(balance.currency ?? 'USD')
+    const currency = String(balance.currency ?? 'BRL')
 
     if (!Number.isFinite(available)) {
       throw new TradeOrderError(tApp('balanceUnreadable'), { code: 'balance_unavailable' })

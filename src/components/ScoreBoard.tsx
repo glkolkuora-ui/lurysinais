@@ -8,7 +8,7 @@ interface Props {
   currency?: string
 }
 
-export default function ScoreBoard({ status, activeBalance, currency = 'USD' }: Props) {
+export default function ScoreBoard({ status, activeBalance, currency = 'BRL' }: Props) {
   const { t } = useI18n()
   const pnl = status?.totalPnl ?? 0
   const wins = status?.wins ?? 0

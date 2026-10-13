@@ -44,6 +44,9 @@ export default function ConfigPanel({ balances, onStart, onClose }: Props) {
   const { t } = useI18n()
   const saved = useRef(loadPersistedConfig()).current
   const realBalances = balances.filter(b => b.type === 'real')
+  const defaultBalance =
+    realBalances.find(b => String(b.currency).toUpperCase() === 'BRL')
+    ?? realBalances[0]
   const savedBalanceValid =
     saved.balanceId != null && realBalances.some(b => b.id === saved.balanceId)
 
@@ -51,7 +54,7 @@ export default function ConfigPanel({ balances, onStart, onClose }: Props) {
   const [activesError, setActivesError] = useState('')
   const [activeId,    setActiveId]    = useState(saved.activeId ?? 0)
   const [balanceId,   setBalanceId]   = useState(
-    savedBalanceValid ? saved.balanceId! : (realBalances[0]?.id ?? 0),
+    savedBalanceValid ? saved.balanceId! : (defaultBalance?.id ?? 0),
   )
   const [instrument] = useState<'binary' | 'digital'>('digital')
   const [entryAmount, setEntryAmount] = useState(saved.entryAmount ?? '5')
@@ -128,7 +131,7 @@ export default function ConfigPanel({ balances, onStart, onClose }: Props) {
   const selectedActive = actives.find(a => a.id === activeId)
 
   const selectedBalance = balances.find(b => String(b.id) === String(balanceId)) ?? null
-  const currentCurrency = selectedBalance?.currency ?? 'USD'
+  const currentCurrency = selectedBalance?.currency ?? 'BRL'
   const balanceAmount = selectedBalance?.amount ?? 0
   const [gate, setGate] = useState<BankrollEvaluateResult | null>(null)
 
