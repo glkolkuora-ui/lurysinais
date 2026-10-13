@@ -145,11 +145,11 @@ export default function DesignChart({ onQuote }: Props) {
     })
 
     const series = chart.addSeries(CandlestickSeries, {
-      upColor: '#8b5cf6',
-      downColor: '#ef5350',
+      upColor: '#22c55e',
+      downColor: '#ef4444',
       borderVisible: false,
-      wickUpColor: '#8b5cf6',
-      wickDownColor: '#ef5350',
+      wickUpColor: '#22c55e',
+      wickDownColor: '#ef4444',
       priceFormat: { type: 'price', precision: 5, minMove: 0.00001 },
     })
 

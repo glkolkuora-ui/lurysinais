@@ -10,10 +10,7 @@ import { pingDb } from './engine/db'
 import {
   checkUpdate,
   clearNotifications,
-  listLessonCatalog,
-  listLessonProgress,
   listNotifications,
-  markLessonProgress,
   markNotificationRead,
   verifyLicense,
 } from './engine/db-ops'
@@ -477,36 +474,6 @@ app.post('/api/license/verify', async (req, res) => {
     res.json(result)
   } catch (e: any) {
     res.json({ authorized: false, message: e?.message ?? 'license_failed' })
-  }
-})
-
-app.get('/api/lessons/catalog', async (_req, res) => {
-  try {
-    res.json({ ok: true, ...(await listLessonCatalog()) })
-  } catch (e: any) {
-    res.json({ ok: false, error: e?.message, modules: [], lessons: [], materials: [] })
-  }
-})
-
-app.post('/api/lessons/progress/list', async (req, res) => {
-  try {
-    const userId = String(req.body?.user_id ?? '')
-    res.json({ watched_lesson_ids: await listLessonProgress(userId) })
-  } catch (e: any) {
-    res.json({ watched_lesson_ids: [], error: e?.message })
-  }
-})
-
-app.post('/api/lessons/progress/mark', async (req, res) => {
-  try {
-    await markLessonProgress(
-      String(req.body?.user_id ?? ''),
-      String(req.body?.lesson_id ?? ''),
-      Boolean(req.body?.is_watched),
-    )
-    res.json({ ok: true })
-  } catch (e: any) {
-    res.json({ ok: false, error: e?.message })
   }
 })
 

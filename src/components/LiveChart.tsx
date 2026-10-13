@@ -84,11 +84,11 @@ export default function LiveChart({ activeId, activeTicker }: Props) {
     })
 
     const series = chart.addSeries(CandlestickSeries, {
-      upColor: '#8b5cf6',
+      upColor: '#22c55e',
       downColor: '#ef4444',
-      borderUpColor: '#8b5cf6',
+      borderUpColor: '#22c55e',
       borderDownColor: '#ef4444',
-      wickUpColor: '#8b5cf6',
+      wickUpColor: '#22c55e',
       wickDownColor: '#ef4444',
     })
 

@@ -1,35 +1,12 @@
 import { useEffect, useState } from 'react'
 import Operacoes from './Operacoes'
-import Aulas from './Aulas'
 import Suporte from './Suporte'
 import NotificationBell from '../components/NotificationBell'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 import { useI18n } from '../i18n/I18nProvider'
-type Tab = 'aulas' | 'operacoes' | 'suporte'
+type Tab = 'operacoes' | 'suporte'
 
 interface Props { onLogout: () => void }
-
-function IconAulas({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M8 7h8M8 11h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  )
-}
 
 function IconOperacoes({ className }: { className?: string }) {
   return (
@@ -75,8 +52,7 @@ function SidebarLogoMark() {
   )
 }
 
-const NAV: { id: Tab; labelKey: 'nav.aulas' | 'nav.operacoes' | 'nav.suporte'; icon: typeof IconAulas }[] = [
-  { id: 'aulas', labelKey: 'nav.aulas', icon: IconAulas },
+const NAV: { id: Tab; labelKey: 'nav.operacoes' | 'nav.suporte'; icon: typeof IconOperacoes }[] = [
   { id: 'operacoes', labelKey: 'nav.operacoes', icon: IconOperacoes },
   { id: 'suporte', labelKey: 'nav.suporte', icon: IconSuporte },
 ]
@@ -192,9 +168,6 @@ export default function MainApp({ onLogout }: Props) {
 
       <div className="members-main">
         <div className="mainapp-body">
-          <div className="tab-panel" style={{ display: tab === 'aulas' ? 'contents' : 'none' }}>
-            <Aulas />
-          </div>
           <div className="tab-panel" style={{ display: tab === 'operacoes' ? 'contents' : 'none' }}>
             <Operacoes />
           </div>

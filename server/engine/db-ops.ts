@@ -1,7 +1,6 @@
 import { randomUUID } from 'crypto'
 import { FEATURE_FLAGS, SUPABASE_URL, SUPABASE_ANON_KEY } from './feature-flags'
 import { requirePool } from './db'
-import { BUILTIN_LESSON_CATALOG } from './lesson-catalog'
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
 const UUID_RE =
@@ -319,105 +318,6 @@ export async function checkUpdate(platform: string, currentVersion: string) {
     published_at: latest.published_at,
     needs_update: needsUpdate,
   }
-}
-
-async function ensureBuiltinLessons(): Promise<void> {
-  const db = requirePool()
-  const module = BUILTIN_LESSON_CATALOG.modules[0]
-  await db.query(
-    `INSERT INTO public.modules (id, title, description, order_index, is_published)
-     VALUES ($1, $2, $3, $4, true)
-     ON CONFLICT (id) DO UPDATE SET
-       title = EXCLUDED.title,
-       description = EXCLUDED.description,
-       is_published = true,
-       updated_at = now()`,
-    [module.id, module.title, module.description, module.order_index],
-  )
-  for (const lesson of BUILTIN_LESSON_CATALOG.lessons) {
-    await db.query(
-      `INSERT INTO public.lessons (
-         id, module_id, title, description, youtube_url, youtube_video_id,
-         duration_seconds, order_index, is_published
-       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, true)
-       ON CONFLICT (id) DO UPDATE SET
-         title = EXCLUDED.title,
-         youtube_url = EXCLUDED.youtube_url,
-         youtube_video_id = EXCLUDED.youtube_video_id,
-         order_index = EXCLUDED.order_index,
-         is_published = true,
-         updated_at = now()`,
-      [
-        lesson.id,
-        lesson.module_id,
-        lesson.title,
-        lesson.description,
-        lesson.youtube_url,
-        lesson.youtube_video_id,
-        lesson.duration_seconds,
-        lesson.order_index,
-      ],
-    )
-  }
-  const keepIds = BUILTIN_LESSON_CATALOG.lessons.map((lesson) => lesson.id)
-  await db.query(
-    `UPDATE public.lessons
-     SET is_published = false, updated_at = now()
-     WHERE module_id = $1
-       AND NOT (id = ANY($2::uuid[]))`,
-    [module.id, keepIds],
-  )
-}
-
-export async function listLessonCatalog() {
-  try {
-    await ensureBuiltinLessons()
-  } catch (err) {
-    console.warn('[LESSONS] não foi possível gravar o catálogo:', (err as Error)?.message ?? err)
-  }
-  try {
-    const db = requirePool()
-    const [mods, lessons, materials] = await Promise.all([
-      db.query(`SELECT * FROM public.modules WHERE is_published = true ORDER BY order_index ASC`),
-      db.query(`SELECT * FROM public.lessons WHERE is_published = true ORDER BY order_index ASC`),
-      db.query(`SELECT * FROM public.lesson_materials ORDER BY order_index ASC`),
-    ])
-    if (lessons.rows.length) {
-      return {
-        modules: mods.rows,
-        lessons: lessons.rows,
-        materials: materials.rows,
-      }
-    }
-  } catch (err) {
-    console.warn('[LESSONS] catálogo do banco indisponível:', (err as Error)?.message ?? err)
-  }
-  return BUILTIN_LESSON_CATALOG
-}
-
-export async function listLessonProgress(userId: string): Promise<string[]> {
-  if (!UUID_RE.test(userId)) return []
-  const db = requirePool()
-  const { rows } = await db.query<{ lesson_id: string }>(
-    `SELECT lesson_id FROM public.lesson_progress WHERE user_id = $1 AND is_watched = true`,
-    [userId],
-  )
-  return rows.map((r) => r.lesson_id)
-}
-
-export async function markLessonProgress(userId: string, lessonId: string, isWatched: boolean) {
-  if (!UUID_RE.test(userId) || !UUID_RE.test(lessonId)) throw new Error('invalid_id')
-  const db = requirePool()
-  const now = new Date()
-  await db.query(
-    `INSERT INTO public.lesson_progress (user_id, lesson_id, is_watched, watched_at, updated_at)
-     VALUES ($1, $2, $3, $4, $4)
-     ON CONFLICT (user_id, lesson_id) DO UPDATE SET
-       is_watched = EXCLUDED.is_watched,
-       watched_at = EXCLUDED.watched_at,
-       updated_at = EXCLUDED.updated_at`,
-    [userId, lessonId, isWatched, isWatched ? now : null],
-  )
 }
 
 export async function listNotifications(userId: string | null) {
