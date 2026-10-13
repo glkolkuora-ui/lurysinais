@@ -139,7 +139,7 @@ export default function LicenseGate({ onAuthorized }: Props) {
       <div className="lic-gate-card" role="status" aria-live="polite">
         <div className="lic-gate-accent" aria-hidden />
         <header className="lic-gate-header">
-          <h1 className="lic-gate-title">Lory Sinais</h1>
+          <h1 className="lic-gate-title">Lury Sinais</h1>
         </header>
         <div className="lic-gate-loading">
           <div className="lic-gate-spinner" />
@@ -154,7 +154,7 @@ export default function LicenseGate({ onAuthorized }: Props) {
       <div className="lic-gate-accent" aria-hidden />
 
       <header className="lic-gate-header">
-        <h1 className="lic-gate-title">Lory Sinais</h1>
+        <h1 className="lic-gate-title">Lury Sinais</h1>
         <p className="lic-gate-sub">
           {t('license.subtitle')}
         </p>

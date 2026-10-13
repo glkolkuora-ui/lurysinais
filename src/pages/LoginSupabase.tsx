@@ -129,8 +129,8 @@ export default function LoginSupabase({ onLogin }: Props) {
         <div className="login-supa-card-accent" aria-hidden />
 
         <header className="login-supa-header">
-          <div className="login-supa-brand" aria-label="Lory Sinais">
-            <span className="login-supa-brand-claude">LORY SINAIS</span>
+          <div className="login-supa-brand" aria-label="Lury Sinais">
+            <span className="login-supa-brand-claude">LURY SINAIS</span>
           </div>
           <h1 className="login-supa-title">{t('supa.title')}</h1>
           <p className="login-supa-sub">{t('supa.sub')}</p>

@@ -159,7 +159,7 @@ export default function Login({ onLoggedIn }: Props) {
         ) : (
         <>
         <div className="login-brand">
-          <span className="brand-claude">Lory Sinais</span>
+          <span className="brand-claude">Lury Sinais</span>
         </div>
         <p className="login-tagline">{t('login.tagline')}</p>
         <p className="login-desc">{t('login.desc')}</p>

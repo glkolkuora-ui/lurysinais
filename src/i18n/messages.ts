@@ -22,7 +22,7 @@ const pt = {
   'nav.account': 'Conta',
   'nav.logout': 'Sair',
   'nav.language': 'Idioma',
-  'app.title': 'Lory Sinais',
+  'app.title': 'Lury Sinais',
 
   // license
   'license.checking': 'Verificando licença…',
@@ -43,7 +43,7 @@ const pt = {
   'login.desc': 'Conecte sua conta Broker10 para acessar a plataforma.',
   'login.enter': 'Entrar com Broker10',
   'login.connectingTitle': 'Conectando ao Broker10...',
-  'login.connectingBody': 'Autorize no pop-up da corretora. Ele fecha sozinho e você continua aqui no Lory Sinais.',
+  'login.connectingBody': 'Autorize no pop-up da corretora. Ele fecha sozinho e você continua aqui no Lury Sinais.',
   'login.popupBlocked': 'O navegador bloqueou o pop-up de login. Permita pop-ups neste site e tente de novo.',
   'login.connectingShort': 'Conectando à Broker10...',
   'login.authDenied': 'Login cancelado na corretora.',
@@ -159,7 +159,7 @@ const pt = {
   'support.contactDesc': 'Entre em contato pelo canal oficial da Broker10.',
   'support.faq1q': 'O bot opera sozinho enquanto meu computador está ligado?',
   'support.faq1a':
-    'Sim. Deixe o Lory Sinais aberto e ele opera automaticamente conforme as estratégias configuradas. Basta ter conexão com a internet.',
+    'Sim. Deixe o Lury Sinais aberto e ele opera automaticamente conforme as estratégias configuradas. Basta ter conexão com a internet.',
   'support.faq2q': 'Posso usar conta demo para testar?',
   'support.faq2a':
     'A operação é feita apenas na conta real. Use banca controlada e as travas de risco (stop loss / stop win) para testar com segurança.',
@@ -199,7 +199,7 @@ const pt = {
   'notif.mins': '{n} min',
   'notif.hours': '{n} h',
   'notif.updateTitle': 'Atualização {version} disponível',
-  'notif.updateBody': 'Uma nova versão do Lory Sinais está pronta para download.',
+  'notif.updateBody': 'Uma nova versão do Lury Sinais está pronta para download.',
 
   // update modal
   'update.mandatory': 'Atualização obrigatória',
@@ -210,11 +210,11 @@ const pt = {
   'update.later': 'Depois',
   'update.download': 'Baixar agora',
 
-  'install.title': 'Instalar Lory Sinais',
+  'install.title': 'Instalar Lury Sinais',
   'install.androidBody': 'Coloque o app na tela inicial e abra como um aplicativo, sem a barra do navegador.',
   'install.androidCta': 'Instalar agora',
   'install.androidHint': 'No Chrome, toque em ⋮ e escolha Instalar app.',
-  'install.iosBody': 'No Safari, adicione o Lory Sinais à Tela de Início para abrir como app.',
+  'install.iosBody': 'No Safari, adicione o Lury Sinais à Tela de Início para abrir como app.',
   'install.iosStep1': 'Toque em Compartilhar',
   'install.iosStep2': 'Depois em Adicionar à Tela de Início',
   'install.dismiss': 'Agora não',
@@ -230,7 +230,7 @@ const en: Record<MessageKey, string> = {
   'nav.account': 'Account',
   'nav.logout': 'Log out',
   'nav.language': 'Language',
-  'app.title': 'Lory Sinais',
+  'app.title': 'Lury Sinais',
 
   'license.checking': 'Checking license…',
   'license.subtitle': 'Enter your email to access the tool.',
@@ -249,7 +249,7 @@ const en: Record<MessageKey, string> = {
   'login.desc': 'Connect your Broker10 account to access the platform.',
   'login.enter': 'Sign in with Broker10',
   'login.connectingTitle': 'Connecting to Broker10...',
-  'login.connectingBody': 'Authorize in the broker pop-up. It closes by itself and you stay here on Lory Sinais.',
+  'login.connectingBody': 'Authorize in the broker pop-up. It closes by itself and you stay here on Lury Sinais.',
   'login.popupBlocked': 'The browser blocked the login pop-up. Allow pop-ups on this site and try again.',
   'login.connectingShort': 'Connecting to Broker10...',
   'login.authDenied': 'Login was cancelled at the broker.',
@@ -360,7 +360,7 @@ const en: Record<MessageKey, string> = {
   'support.contactDesc': 'Get in touch through the official Broker10 channel.',
   'support.faq1q': 'Does the bot trade by itself while my computer is on?',
   'support.faq1a':
-    'Yes. Leave Lory Sinais open and it trades automatically with the strategies you set. You only need an internet connection.',
+    'Yes. Leave Lury Sinais open and it trades automatically with the strategies you set. You only need an internet connection.',
   'support.faq2q': 'Can I use a demo account to test?',
   'support.faq2a':
     'Trading is real-account only. Use a controlled bankroll and the risk locks (stop loss / stop win) to test safely.',
@@ -399,7 +399,7 @@ const en: Record<MessageKey, string> = {
   'notif.mins': '{n} min',
   'notif.hours': '{n} h',
   'notif.updateTitle': 'Update {version} available',
-  'notif.updateBody': 'A new version of Lory Sinais is ready to download.',
+  'notif.updateBody': 'A new version of Lury Sinais is ready to download.',
 
   'update.mandatory': 'Required update',
   'update.available': 'New version available',
@@ -409,11 +409,11 @@ const en: Record<MessageKey, string> = {
   'update.later': 'Later',
   'update.download': 'Download now',
 
-  'install.title': 'Install Lory Sinais',
+  'install.title': 'Install Lury Sinais',
   'install.androidBody': 'Add the app to your home screen and open it without the browser bar.',
   'install.androidCta': 'Install now',
   'install.androidHint': 'In Chrome, tap ⋮ and choose Install app.',
-  'install.iosBody': 'In Safari, add Lory Sinais to your Home Screen to open it as an app.',
+  'install.iosBody': 'In Safari, add Lury Sinais to your Home Screen to open it as an app.',
   'install.iosStep1': 'Tap Share',
   'install.iosStep2': 'Then Add to Home Screen',
   'install.dismiss': 'Not now',
@@ -427,7 +427,7 @@ const es: Record<MessageKey, string> = {
   'nav.account': 'Cuenta',
   'nav.logout': 'Salir',
   'nav.language': 'Idioma',
-  'app.title': 'Lory Sinais',
+  'app.title': 'Lury Sinais',
 
   'license.checking': 'Verificando licencia…',
   'license.subtitle': 'Escribe tu email para acceder a la herramienta.',
@@ -446,7 +446,7 @@ const es: Record<MessageKey, string> = {
   'login.desc': 'Conecta tu cuenta Broker10 para acceder a la plataforma.',
   'login.enter': 'Entrar con Broker10',
   'login.connectingTitle': 'Conectando a Broker10...',
-  'login.connectingBody': 'Autoriza en el pop-up de la corredora. Se cierra solo y sigues aquí en Lory Sinais.',
+  'login.connectingBody': 'Autoriza en el pop-up de la corredora. Se cierra solo y sigues aquí en Lury Sinais.',
   'login.popupBlocked': 'El navegador bloqueó el pop-up de login. Permite ventanas emergentes en este sitio e inténtalo de nuevo.',
   'login.connectingShort': 'Conectando a Broker10...',
   'login.authDenied': 'Login cancelado en la corredora.',
@@ -557,7 +557,7 @@ const es: Record<MessageKey, string> = {
   'support.contactDesc': 'Contacta por el canal oficial de Broker10.',
   'support.faq1q': '¿El bot opera solo mientras el ordenador está encendido?',
   'support.faq1a':
-    'Sí. Deja Lory Sinais abierto y opera automáticamente según las estrategias configuradas. Solo necesitas conexión a internet.',
+    'Sí. Deja Lury Sinais abierto y opera automáticamente según las estrategias configuradas. Solo necesitas conexión a internet.',
   'support.faq2q': '¿Puedo usar una cuenta demo para probar?',
   'support.faq2a':
     'La operación es solo en cuenta real. Usa una banca controlada y los bloqueos de riesgo (stop loss / stop win) para probar con seguridad.',
@@ -596,7 +596,7 @@ const es: Record<MessageKey, string> = {
   'notif.mins': '{n} min',
   'notif.hours': '{n} h',
   'notif.updateTitle': 'Actualización {version} disponible',
-  'notif.updateBody': 'Hay una nueva versión de Lory Sinais lista para descargar.',
+  'notif.updateBody': 'Hay una nueva versión de Lury Sinais lista para descargar.',
 
   'update.mandatory': 'Actualización obligatoria',
   'update.available': 'Nueva versión disponible',
@@ -606,11 +606,11 @@ const es: Record<MessageKey, string> = {
   'update.later': 'Después',
   'update.download': 'Descargar ahora',
 
-  'install.title': 'Instalar Lory Sinais',
+  'install.title': 'Instalar Lury Sinais',
   'install.androidBody': 'Pon la app en la pantalla de inicio y ábrela sin la barra del navegador.',
   'install.androidCta': 'Instalar ahora',
   'install.androidHint': 'En Chrome, toca ⋮ y elige Instalar app.',
-  'install.iosBody': 'En Safari, añade Lory Sinais a la pantalla de inicio para abrirla como app.',
+  'install.iosBody': 'En Safari, añade Lury Sinais a la pantalla de inicio para abrirla como app.',
   'install.iosStep1': 'Toca Compartir',
   'install.iosStep2': 'Luego Añadir a pantalla de inicio',
   'install.dismiss': 'Ahora no',

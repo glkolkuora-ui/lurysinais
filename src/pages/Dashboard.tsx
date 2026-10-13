@@ -96,7 +96,7 @@ export default function Dashboard({ onDisconnect }: Props) {
       {/* ── Top Bar ── */}
       <div className="topbar">
         <div className="topbar-logo">
-          <span className="brand-claude">Lory Sinais</span>
+          <span className="brand-claude">Lury Sinais</span>
         </div>
 
         <div className="topbar-pair">

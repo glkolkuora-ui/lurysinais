@@ -35,8 +35,8 @@ function popupCopy(locale: string) {
   if (locale === 'en') {
     return {
       connected: 'Connected. Closing this window...',
-      close: 'You can close this window and go back to Lory Sinais.',
-      expired: 'Session expired. Close this window and sign in to Lory Sinais again.',
+      close: 'You can close this window and go back to Lury Sinais.',
+      expired: 'Session expired. Close this window and sign in to Lury Sinais again.',
       opening: 'Opening the broker login in this window…',
       startFail: 'Could not start login',
       redirect: 'Redirecting to the broker…',
@@ -46,8 +46,8 @@ function popupCopy(locale: string) {
   if (locale === 'pt') {
     return {
       connected: 'Conectado. Fechando este pop-up...',
-      close: 'Pode fechar este pop-up e voltar ao Lory Sinais.',
-      expired: 'Sessão expirada. Feche este pop-up e entre de novo no Lory Sinais.',
+      close: 'Pode fechar este pop-up e voltar ao Lury Sinais.',
+      expired: 'Sessão expirada. Feche este pop-up e entre de novo no Lury Sinais.',
       opening: 'Abrindo o login da corretora neste pop-up…',
       startFail: 'Falha ao iniciar o login',
       redirect: 'Redirecionando para a corretora…',
@@ -56,8 +56,8 @@ function popupCopy(locale: string) {
   }
   return {
     connected: 'Conectado. Cerrando esta ventana...',
-    close: 'Puedes cerrar esta ventana y volver a Lory Sinais.',
-    expired: 'Sesión expirada. Cierra esta ventana y entra de nuevo en Lory Sinais.',
+    close: 'Puedes cerrar esta ventana y volver a Lury Sinais.',
+    expired: 'Sesión expirada. Cierra esta ventana y entra de nuevo en Lury Sinais.',
     opening: 'Abriendo el login del broker en esta ventana…',
     startFail: 'No se pudo iniciar el login',
     redirect: 'Redirigiendo al broker…',
@@ -262,7 +262,7 @@ app.get('/auth/callback', async (req, res) => {
     const origin = publicOrigin(req)
     const copy = popupCopy(session.locale)
     res.type('html').send(`<!doctype html>
-<html lang="${popupLang(session.locale)}"><head><meta charset="utf-8"><title>Lory Sinais</title></head>
+<html lang="${popupLang(session.locale)}"><head><meta charset="utf-8"><title>Lury Sinais</title></head>
 <body style="background:#000000;color:#e2e4ea;font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0">
 <p id="msg">${copy.connected}</p>
 <script>
@@ -292,7 +292,7 @@ app.get('/auth/broker-popup', (req, res) => {
   const expired = popupCopy('es')
   if (!session) {
     res.status(401).type('html').send(`<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><title>Lory Sinais</title></head>
+<html lang="es"><head><meta charset="utf-8"><title>Lury Sinais</title></head>
 <body style="margin:0;background:#000000;color:#e2e4ea;font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh">
 <p>${expired.expired}</p>
 </body></html>`)
@@ -304,7 +304,7 @@ app.get('/auth/broker-popup', (req, res) => {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lory Sinais</title>
+  <title>Lury Sinais</title>
   <style>
     html,body{margin:0;height:100%;background:#000000;color:#e2e4ea;font-family:system-ui,sans-serif}
     .wrap{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center}
@@ -318,7 +318,7 @@ app.get('/auth/broker-popup', (req, res) => {
 <body>
   <div class="wrap">
     <div class="spin" aria-hidden="true"></div>
-    <h1>Lory Sinais</h1>
+    <h1>Lury Sinais</h1>
     <p id="msg">${copy.opening}</p>
   </div>
   <script>
