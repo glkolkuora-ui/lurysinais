@@ -15,7 +15,7 @@ function readStoredLocale(): Locale {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw && (LOCALES as readonly string[]).includes(raw)) return raw as Locale
   } catch { /* ignore */ }
-  return 'es'
+  return 'pt'
 }
 
 interface I18nValue {

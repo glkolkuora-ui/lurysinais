@@ -269,7 +269,7 @@ const MSG: Record<AppLocale, Record<AppMsgKey, string>> = {
   },
 }
 
-let current: AppLocale = 'es'
+let current: AppLocale = 'pt'
 
 export function setAppLocale(next: string): AppLocale {
   if (next === 'en' || next === 'es' || next === 'pt') current = next

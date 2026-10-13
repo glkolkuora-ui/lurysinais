@@ -67,8 +67,8 @@ function popupCopy(locale: string) {
 
 function popupLang(locale: string): string {
   if (locale === 'en') return 'en'
-  if (locale === 'pt') return 'pt-BR'
-  return 'es'
+  if (locale === 'es') return 'es'
+  return 'pt-BR'
 }
 
 const COOKIE = 'cw_sid'
@@ -289,10 +289,10 @@ app.get('/auth/callback', async (req, res) => {
 
 app.get('/auth/broker-popup', (req, res) => {
   const session = getSession(String(req.cookies?.[COOKIE] ?? ''))
-  const expired = popupCopy('es')
+  const expired = popupCopy('pt')
   if (!session) {
     res.status(401).type('html').send(`<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><title>Lury Sinais</title></head>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Lury Sinais</title></head>
 <body style="margin:0;background:#000000;color:#e2e4ea;font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh">
 <p>${expired.expired}</p>
 </body></html>`)
@@ -444,7 +444,7 @@ app.get('/api/bot/chart-snapshot', (req, res) => {
 
 app.post('/api/locale', (req, res) => {
   const session = requireSession(req, res)!
-  const locale = setSessionLocale(session, String(req.body?.locale ?? 'es'))
+  const locale = setSessionLocale(session, String(req.body?.locale ?? 'pt'))
   res.json({ ok: true, locale })
 })
 

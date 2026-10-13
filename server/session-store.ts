@@ -90,7 +90,7 @@ export function createSession(): Session {
     bot,
     email: null,
     userId: null,
-    locale: 'es',
+    locale: 'pt',
     createdAt: Date.now(),
     lastSeenAt: Date.now(),
     verifier: null,
