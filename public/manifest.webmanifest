@@ -1,0 +1,13 @@
+{
+  "id": "/",
+  "name": "Lory Sinais",
+  "short_name": "Lory Sinais",
+  "description": "Lory Sinais",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "es"
+}
